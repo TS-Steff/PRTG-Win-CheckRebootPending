@@ -24,7 +24,7 @@
     
     .Link
     https://ts-man.ch
-    https://www.powershellgallery.com/packages/PendingReboot/0.9.0.6
+    https://www.powershellgallery.com/packages/PendingReboot
 #>
 
 ### Possible states 
