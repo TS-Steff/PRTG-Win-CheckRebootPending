@@ -24,7 +24,7 @@
     
     .Link
     https://ts-man.ch
-    https://www.powershellgallery.com/packages/PendingReboot
+    https://www.powershellgallery.com/packages/Test-PendingReboot/
 #>
 
 ### Possible states 
@@ -57,15 +57,20 @@ if($password){
 
 #write-host $password -ForegroundColor cyan
 
-# Check if Module PendingReboot is installed
+# Check if PackageProvider Nuget and Module PendingReboot is installed
 if(Get-Module -ListAvailable -Name PendingReboot) {
-    if($Info){
-        write-host "INFO - Module PendingReboot installed!" -ForegroundColor Green
-    }
+    if($Info){ write-host "INFO - Module PendingReboot installed!" -ForegroundColor Green }
 }else{
-    if($Info){
-        Write-Host "WARN - Module Pending Reboot not Installed!" -ForegroundColor Red
+    if($Info){ Write-Host "WARN - Module Pending Reboot not Installed!" -ForegroundColor Red }
+
+    if(Get-PackageProvider -Name Nuget){
+        if($info){ write-host "INFO - Nuget installed installed" -ForegroundColor Green }        
+    }else{
+        if($info){ Write-host "WARN - Nuget NOT installed, try to intsall" -ForegroundColor Red }
+        Install−PackageProvider −Name Nuget −Force
     }
+
+    Install-Script -name Test-PendingReboot -Force
 }
 
 
