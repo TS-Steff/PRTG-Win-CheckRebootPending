@@ -60,6 +60,9 @@ if ($env:PROCESSOR_ARCHITEW6432 -eq "AMD64") {
     exit $lastexitcode
 }
 
+#import Module
+Import-Module -Name PendingReboot
+
 #Check if Module is installed
 if(Get-Module -Name PendingReboot){
     ## all ok
@@ -68,8 +71,6 @@ if(Get-Module -Name PendingReboot){
     exit
 }
 
-#import Module
-Import-Module -Name PendingReboot
 
 # create credentials
 if($password){
