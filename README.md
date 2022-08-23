@@ -7,6 +7,9 @@ https://www.powershellgallery.com/packages/PendingReboot
     Install-PackageProvider -Name Nuget
     Install-Module -Name PendingReboot
 
+Powershell Execution Policy Unrestricted
+
+
 # Screenshot
 ![PRTG Screenshot](/IMG/screenshot.png?raw=true "PRTG Screenshot")
     
@@ -26,4 +29,4 @@ https://www.powershellgallery.com/packages/PendingReboot
     prtg-win-check-reboot.ps1     - C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\EXE
     
 Log Location
-    C:\ProgramData\Paessler\PRTG Network Monitor\Logs
+    C:\ProgramData\Paessler\PRTG Network Monitor\Logs\Sensors

@@ -61,10 +61,9 @@ if ($env:PROCESSOR_ARCHITEW6432 -eq "AMD64") {
 }
 
 #Check if Module is installed
-try{
-    Get-Module -Name PendingReboot
-}
-catch {
+if(Get-Module -Name PendingReboot){
+    ## all ok
+}else{
     Write-host "8: PendingReboot Module not installed"
     exit
 }
