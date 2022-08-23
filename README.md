@@ -6,6 +6,9 @@ https://www.powershellgallery.com/packages/PendingReboot
 
     Install-PackageProvider -Name Nuget
     Install-Module -Name PendingReboot
+
+# Screenshot
+![PRTG Screenshot](/IMG/screenshot.png?raw=true "PRTG Screenshot")
     
 # Settings in EXE Skript Sensor
 ### Parameters
