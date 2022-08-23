@@ -7,6 +7,9 @@ https://www.powershellgallery.com/packages/Test-PendingReboot/
     Install-PackageProvider -Name Nuget
     Install-Module -Name PendingReboot
     
+# Parameters in Sensor
+    -Server %host -username %windowsuser -password %windowspassword
+        
 # File locations
 
 ## On your PRTG-Core Server
