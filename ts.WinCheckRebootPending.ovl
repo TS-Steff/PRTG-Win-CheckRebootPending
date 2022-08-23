@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueLookup id="ts.CheckRebootState" desiredValue="1" undefinedState="Error">
+  <Lookups>
+    <SingleInt state="OK" value="0">OK</SingleInt>
+    <SingleInt state="Error" value="1">Reboot Pending</SingleInt>
+    <SingleInt state="Error" value="9">Connection error</SingleInt>
+  </Lookups>
+</ValueLookup>
