@@ -7,8 +7,12 @@ https://www.powershellgallery.com/packages/Test-PendingReboot/
     Install-PackageProvider -Name Nuget
     Install-Module -Name PendingReboot
     
-# Parameters in Sensor
+# Settings in EXE Skript Sensor
+### Parameters
     -Server %host -username %windowsuser -password %windowspassword
+        
+### Scanning Interval
+15 Minutes        
         
 # File locations
 
@@ -16,4 +20,4 @@ https://www.powershellgallery.com/packages/Test-PendingReboot/
     ts-WinCheckRebootPending.ovl  - C:\Program Files (x86)\PRTG Network Monitor\lookups
 
 ## On The Probe
-    prtg-win-check-reboot.ps1     - C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors
+    prtg-win-check-reboot.ps1     - C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\EXE

@@ -60,6 +60,14 @@ if ($env:PROCESSOR_ARCHITEW6432 -eq "AMD64") {
     exit $lastexitcode
 }
 
+#Check if Module is installed
+try{
+    Get-Module -Name PendingReboot
+}
+catch {
+    Write-host "8: PendingReboot Module not installed"
+    exit
+}
 
 #import Module
 Import-Module -Name PendingReboot

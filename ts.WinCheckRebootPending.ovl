@@ -3,6 +3,7 @@
   <Lookups>
     <SingleInt state="OK" value="0">OK</SingleInt>
     <SingleInt state="Error" value="1">Reboot Pending</SingleInt>
+    <SingleInt state="Error" value="8">PS-Module PendingReboot not Installed on Probe!!!</SingleInt>
     <SingleInt state="Error" value="9">Connection error</SingleInt>
   </Lookups>
 </ValueLookup>
