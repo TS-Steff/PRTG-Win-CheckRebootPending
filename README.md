@@ -5,4 +5,4 @@ Make sure Test-RebootPending is installed (PackageProvider nuget and PSGallery r
 https://www.powershellgallery.com/packages/Test-PendingReboot/
 
     Install-PackageProvider -Name Nuget
-    Install-Script -Name Test-PendingReboot
+    Install-Module -Name PendingReboot
