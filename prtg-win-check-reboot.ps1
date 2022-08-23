@@ -48,32 +48,28 @@ param(
         [switch]$Info = $false
 )
 
+# Check if 64Bit Environment
+if ($env:PROCESSOR_ARCHITEW6432 -eq "AMD64") {
+    # Source: https://stackoverflow.com/a/38981021
+    #write-warning "Y'arg Matey, we're off to 64-bit land....."
+    if ($myInvocation.Line) {
+        &"$env:WINDIR\sysnative\windowspowershell\v1.0\powershell.exe" -NonInteractive -NoProfile $myInvocation.Line
+    }else{
+        &"$env:WINDIR\sysnative\windowspowershell\v1.0\powershell.exe" -NonInteractive -NoProfile -file "$($myInvocation.InvocationName)" $args
+    }
+    exit $lastexitcode
+}
+
+
+#import Module
+Import-Module -Name PendingReboot
+
 # create credentials
 if($password){
     [securestring]$password = ConvertTo-SecureString $password -AsPlainText -Force
     [pscredential]$credentials = New-Object System.Management.Automation.PSCredential ($username, $password)
 }
 
-
-#write-host $password -ForegroundColor cyan
-
-# Check if PackageProvider Nuget and Module PendingReboot is installed
-<#
-if(Get-Module -ListAvailable -Name PendingReboot) {
-    if($Info){ write-host "INFO - Module PendingReboot installed!" -ForegroundColor Green }
-}else{
-    if($Info){ Write-Host "WARN - Module Pending Reboot not Installed!" -ForegroundColor Red }
-
-    if(Get-PackageProvider -Name Nuget){
-        if($info){ write-host "INFO - Nuget installed installed" -ForegroundColor Green }        
-    }else{
-        if($info){ Write-host "WARN - Nuget NOT installed, try to intsall" -ForegroundColor Red }
-        Install−PackageProvider −Name Nuget −Force
-    }
-
-    Install-Script -name Test-PendingReboot -Force
-}
-#>
 
 # Run PendingReboot$
 if($credentials){
