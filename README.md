@@ -24,3 +24,6 @@ https://www.powershellgallery.com/packages/PendingReboot
 
 ## On The Probe
     prtg-win-check-reboot.ps1     - C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\EXE
+    
+Log Location
+    C:\ProgramData\Paessler\PRTG Network Monitor\Logs
