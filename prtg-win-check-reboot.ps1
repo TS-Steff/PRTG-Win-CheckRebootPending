@@ -58,6 +58,7 @@ if($password){
 #write-host $password -ForegroundColor cyan
 
 # Check if PackageProvider Nuget and Module PendingReboot is installed
+<#
 if(Get-Module -ListAvailable -Name PendingReboot) {
     if($Info){ write-host "INFO - Module PendingReboot installed!" -ForegroundColor Green }
 }else{
@@ -72,7 +73,7 @@ if(Get-Module -ListAvailable -Name PendingReboot) {
 
     Install-Script -name Test-PendingReboot -Force
 }
-
+#>
 
 # Run PendingReboot$
 if($credentials){
